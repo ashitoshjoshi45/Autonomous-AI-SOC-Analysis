@@ -1,0 +1,83 @@
+//This are the logs ## 📂 Project Data: server_logs.txt
+The `server_logs.txt` file is the heart of this simulation. It represents the raw data that a SOC Analyst would monitor in a real enterprise environment.
+
+* **How it's created:** This file is dynamically populated by running `python log_generator.py`.
+* **What it simulates:** It mimics standard Linux `auth.log` entries, including successful logins and failed "brute-force" attempts from various IP addresses.
+* **Purpose:** It provides the "telemetry" needed for the AI Analyst (`ai_soc_V.py`) to detect suspicious patterns.
+
+
+
+2026-02-10 21:36:29 INFO sshd[1045]: Accepted password for root from 10.0.0.2 port 23258 ssh2
+2026-02-10 21:36:31 INFO sshd[7963]: Accepted password for admin from 203.0.113.5 port 18117 ssh2
+2026-02-10 21:36:33 INFO sshd[3253]: Accepted password for test from 45.33.22.11 port 44317 ssh2
+2026-02-10 21:36:35 INFO sshd[7453]: Accepted password for root from 10.0.0.2 port 12193 ssh2
+2026-02-10 21:36:37 Failed password for invalid user test from 45.33.22.11 port 57477 ssh2
+2026-02-10 21:36:39 Failed password for invalid user root from 192.168.1.5 port 49461 ssh2
+2026-02-10 21:36:41 Failed password for invalid user root from 203.0.113.5 port 29428 ssh2
+2026-02-10 21:36:43 INFO sshd[8654]: Accepted password for user1 from 203.0.113.5 port 54580 ssh2
+2026-02-10 21:36:45 Failed password for invalid user admin from 203.0.113.5 port 23753 ssh2
+2026-02-10 21:36:47 INFO sshd[6643]: Accepted password for root from 45.33.22.11 port 31175 ssh2
+2026-02-10 21:36:49 Failed password for invalid user test from 192.168.1.5 port 50052 ssh2
+2026-02-10 21:36:51 INFO sshd[3741]: Accepted password for test from 192.168.1.5 port 28816 ssh2
+2026-02-10 21:36:53 INFO sshd[2774]: Accepted password for user1 from 203.0.113.5 port 6040 ssh2
+2026-02-10 21:36:55 INFO sshd[6279]: Accepted password for root from 45.33.22.11 port 51793 ssh2
+2026-02-10 21:36:57 INFO sshd[4006]: Accepted password for admin from 192.168.1.5 port 16301 ssh2
+2026-02-10 21:36:59 INFO sshd[9319]: Accepted password for test from 10.0.0.2 port 59556 ssh2
+2026-02-10 21:37:01 INFO sshd[6328]: Accepted password for user1 from 203.0.113.5 port 49818 ssh2
+2026-02-10 21:37:03 INFO sshd[3035]: Accepted password for test from 45.33.22.11 port 51236 ssh2
+2026-02-10 21:37:05 INFO sshd[9570]: Accepted password for admin from 192.168.1.5 port 31589 ssh2
+2026-02-10 21:37:07 Failed password for invalid user user1 from 203.0.113.5 port 8503 ssh2
+2026-02-10 21:37:09 Failed password for invalid user admin from 192.168.1.5 port 56911 ssh2
+2026-02-10 21:37:11 INFO sshd[1645]: Accepted password for user1 from 45.33.22.11 port 6853 ssh2
+2026-02-10 21:37:13 INFO sshd[7945]: Accepted password for root from 192.168.1.5 port 27359 ssh2
+2026-02-10 21:37:15 Failed password for invalid user test from 192.168.1.5 port 62169 ssh2
+2026-02-10 21:37:17 INFO sshd[1536]: Accepted password for test from 45.33.22.11 port 26999 ssh2
+2026-02-10 21:37:19 INFO sshd[1400]: Accepted password for root from 192.168.1.5 port 48126 ssh2
+2026-02-10 21:37:21 INFO sshd[5733]: Accepted password for test from 45.33.22.11 port 37250 ssh2
+2026-02-10 21:37:23 INFO sshd[7954]: Accepted password for admin from 192.168.1.5 port 57367 ssh2
+2026-02-10 21:37:25 INFO sshd[9009]: Accepted password for test from 45.33.22.11 port 26025 ssh2
+2026-02-10 21:37:27 INFO sshd[2978]: Accepted password for root from 203.0.113.5 port 10005 ssh2
+2026-02-10 21:37:29 INFO sshd[7321]: Accepted password for root from 45.33.22.11 port 59738 ssh2
+2026-02-10 21:37:31 Failed password for invalid user test from 45.33.22.11 port 17952 ssh2
+2026-02-10 21:37:33 INFO sshd[1861]: Accepted password for user1 from 45.33.22.11 port 11683 ssh2
+2026-02-10 21:37:35 INFO sshd[3065]: Accepted password for root from 45.33.22.11 port 45854 ssh2
+2026-02-10 21:37:37 Failed password for invalid user root from 192.168.1.5 port 64178 ssh2
+2026-02-10 21:37:39 Failed password for invalid user admin from 192.168.1.5 port 7954 ssh2
+2026-02-10 21:37:41 INFO sshd[1380]: Accepted password for root from 192.168.1.5 port 52889 ssh2
+2026-02-10 21:37:43 Failed password for invalid user user1 from 10.0.0.2 port 2702 ssh2
+2026-02-10 21:37:45 Failed password for invalid user root from 203.0.113.5 port 30998 ssh2
+2026-02-10 21:37:47 Failed password for invalid user admin from 10.0.0.2 port 44760 ssh2
+2026-02-10 21:37:49 INFO sshd[5362]: Accepted password for root from 10.0.0.2 port 3117 ssh2
+2026-02-10 21:37:51 INFO sshd[5317]: Accepted password for test from 192.168.1.5 port 55056 ssh2
+2026-02-10 21:37:53 INFO sshd[7405]: Accepted password for admin from 203.0.113.5 port 48039 ssh2
+2026-02-10 21:37:55 INFO sshd[9206]: Accepted password for admin from 203.0.113.5 port 59807 ssh2
+2026-02-10 21:37:57 INFO sshd[4772]: Accepted password for root from 10.0.0.2 port 9357 ssh2
+2026-02-10 21:37:59 INFO sshd[8804]: Accepted password for test from 45.33.22.11 port 1572 ssh2
+2026-02-10 21:38:01 Failed password for invalid user user1 from 203.0.113.5 port 65498 ssh2
+2026-02-10 21:38:04 INFO sshd[4361]: Accepted password for admin from 10.0.0.2 port 58763 ssh2
+2026-02-10 21:38:06 INFO sshd[2744]: Accepted password for user1 from 10.0.0.2 port 47905 ssh2
+2026-02-10 21:38:08 INFO sshd[8202]: Accepted password for admin from 192.168.1.5 port 16681 ssh2
+2026-02-10 21:38:10 INFO sshd[3716]: Accepted password for admin from 10.0.0.2 port 44697 ssh2
+2026-02-10 21:38:12 INFO sshd[7885]: Accepted password for root from 192.168.1.5 port 33414 ssh2
+2026-02-10 21:38:14 INFO sshd[3163]: Accepted password for user1 from 45.33.22.11 port 32483 ssh2
+2026-02-10 21:38:16 Failed password for invalid user user1 from 192.168.1.5 port 53293 ssh2
+2026-02-10 21:38:18 INFO sshd[4966]: Accepted password for admin from 45.33.22.11 port 7093 ssh2
+2026-02-10 21:38:20 INFO sshd[2583]: Accepted password for admin from 192.168.1.5 port 4978 ssh2
+2026-02-10 21:38:22 Failed password for invalid user admin from 203.0.113.5 port 20067 ssh2
+2026-02-10 21:38:24 INFO sshd[3030]: Accepted password for user1 from 10.0.0.2 port 10664 ssh2
+2026-02-10 21:38:26 INFO sshd[7276]: Accepted password for test from 192.168.1.5 port 62272 ssh2
+2026-02-10 21:38:28 Failed password for invalid user root from 203.0.113.5 port 22047 ssh2
+2026-02-10 21:38:30 Failed password for invalid user test from 10.0.0.2 port 48736 ssh2
+2026-02-10 21:38:32 Failed password for invalid user admin from 10.0.0.2 port 13855 ssh2
+2026-02-10 21:38:34 Failed password for invalid user admin from 45.33.22.11 port 28828 ssh2
+2026-02-10 21:38:36 INFO sshd[2865]: Accepted password for test from 45.33.22.11 port 46926 ssh2
+2026-02-10 21:38:38 Failed password for invalid user admin from 10.0.0.2 port 39340 ssh2
+2026-02-10 21:38:40 Failed password for invalid user root from 192.168.1.5 port 27878 ssh2
+2026-02-10 21:38:42 INFO sshd[2704]: Accepted password for test from 203.0.113.5 port 24413 ssh2
+2026-02-10 21:38:44 INFO sshd[5465]: Accepted password for user1 from 45.33.22.11 port 61603 ssh2
+2026-02-10 21:38:46 INFO sshd[7028]: Accepted password for user1 from 203.0.113.5 port 44297 ssh2
+2026-02-10 21:38:48 Failed password for invalid user admin from 10.0.0.2 port 52146 ssh2
+2026-02-10 21:38:50 INFO sshd[8206]: Accepted password for root from 192.168.1.5 port 50942 ssh2
+2026-02-10 21:38:52 Failed password for invalid user user1 from 203.0.113.5 port 14722 ssh2
+2026-02-10 21:38:54 Failed password for invalid user root from 45.33.22.11 port 3008 ssh2
+2026-02-10 21:38:56 INFO sshd[1273]: Accepted password for root from 203.0.113.5 port 32350 ssh2
