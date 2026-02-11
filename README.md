@@ -29,3 +29,54 @@ This project was built to bridge the gap between theoretical knowledge (CompTIA 
 * Add automated incident response (e.g., auto-blocking malicious IPs).
 * Expand threat detection to include SQL injection and XSS patterns.
 
+  # Aegis Deceptive Intelligence
+### AI-Driven Active Defense System & Honeypot
+
+![Project Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Python](https://img.shields.io/badge/Language-Python%203.10%2B-blue)
+![Security](https://img.shields.io/badge/Focus-Active%20Defense-red)
+
+## 🛡️ Overview
+**Aegis Deceptive Intelligence** is a next-generation "Active Defense" system designed to detect, analyze, and map cyber threats in real-time. Unlike traditional passive honeypots, Aegis uses **Generative AI (Gemini API)** to analyze attacker payloads and classify their intent (e.g., *Botnet Recruitment*, *Credential Harvesting*, *Reconnaissance*).
+
+The system deploys "Ghost Sensors"—low-interaction services that mimic vulnerable ports (SSH, HTTP, Telnet)—to attract and study adversaries without exposing the actual network infrastructure.
+
+## 🚀 Key Features
+* **Smart Ghost Sensors:** Multi-port listeners that emulate vulnerable services to capture raw attack data.
+* **AI Threat Classification:** detailed intent analysis of every captured command using Large Language Models.
+* **Live Threat Map:** Real-time visualization of attacker origins using geolocation APIs.
+* **Hardened Architecture:** Strict Linux permission controls to ensure log integrity and sensor security.
+
+## 🔒 Security & Hardening
+Security begins at the file system level. This project adheres to the **Principle of Least Privilege**:
+* **Log Integrity:** Write access to the `/logs` directory is restricted to the service account only.
+* **Config Protection:** API keys and environment variables are locked down (read-only for root).
+* **Audit Trail:** File structures are regularly audited using `ls -la` to detect unauthorized modifications.
+
+## 🛠️ Installation
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/yourusername/aegis-deceptive-intelligence.git](https://github.com/yourusername/aegis-deceptive-intelligence.git)
+    cd aegis-deceptive-intelligence
+    ```
+
+2.  **Set up the environment:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Run the Ghost Sensor:**
+    ```bash
+    sudo python3 sensor.py
+    ```
+
+## 📊 Roadmap
+- [x] Basic TCP Listener (Ghost Sensor)
+- [x] Linux File System Hardening
+- [ ] Integration with Gemini API for Intent Analysis
+- [ ] Dashboard Development (Streamlit)
+- [ ] Docker Containerization
+
+---
+*Created by ASHITOSH S JOSHI as part of a Cybersecurity & AI Portfolio.*
+
