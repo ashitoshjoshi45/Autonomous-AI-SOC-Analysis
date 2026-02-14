@@ -73,7 +73,7 @@ Security begins at the file system level. This project adheres to the **Principl
 ## 📊 Roadmap
 - [x] Basic TCP Listener (Ghost Sensor)
 - [x] Linux File System Hardening
-- [ ] Integration with Gemini API for Intent Analysis
+- [x] Integration with Gemini API for Intent Analysis
 - [ ] Dashboard Development (Streamlit)
 - [ ] Docker Containerization
 
