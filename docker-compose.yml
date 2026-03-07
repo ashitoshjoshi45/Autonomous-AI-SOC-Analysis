@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  aegis-app:
+    build: .
+    ports:
+      - "8501:8501"  # Streamlit Dashboard
+      - "8080:8080"  # Ghost Sensor
+    volumes:
+      - .:/app       # Syncs your code and logs for real-time updates
+    env_file:
+      - .env
+    restart: always
