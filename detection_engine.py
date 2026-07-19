@@ -28,6 +28,27 @@ class DetectionEngine:
                 break
             
         return alert_flag, log_severity
+
+    #added on 19-07-2026
+    def analyze_payload(self, source_ip, payload):
+        #create a localized log entry structure for evaluator
+        log_entry = {"payload":payload}
+
+        # 1. Run signature evaluation
+        alert_flag, log_severity = self.evaluate_traffic(log_entry, THREAT_SIGNATURES)
+
+        # 2. Track traffic freq for simple threshold alerting
+        self.ip_tracker[source_ip] = self.op_tracker.get(source_ip, 0) + 1
+        if self.ip_tracker[source_ip] > 100 and log_severity != "CRITICAL":
+            alert_flag = True
+            log_severity = "MEDIUM"
+
+        # 3. Return enriched telemetry for the dashboard
+        return{
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "source_ip": source_ip,
+            "alert_triggered": alert_flag,
+            "severity": log_severity
+        }
   
-    #   return alert_flag, log_severity
-    # end function
+   
