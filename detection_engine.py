@@ -50,5 +50,17 @@ class DetectionEngine:
             "alert_triggered": alert_flag,
             "severity": log_severity
         }
+        //added on 20-07-2026
+        // title: analyze payload pseudocode
+class DetectionEngine:
+          def analyze_payload(payload_list, signature_db):
+              // initialize an empty list to store detected threats
+              // iterate through payload_list
+                  // iterate through signature_db
+                      // if signature is found in the payload
+                          // log the detection and defang any malicious URLs
+                          // flag payload for Ollama context analysis
+                          // break to avoid duplicate alerts for the same payload
+              // return the list of detected threats
   
    

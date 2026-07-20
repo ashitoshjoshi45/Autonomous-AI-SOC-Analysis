@@ -1,0 +1,2 @@
+2026-03-10 14:22:01 - Source: 192.168.1.45 - Event: Multiple failed SSH logins - User: root
+2026-03-10 14:22:05 - Source: 192.168.1.45 - Event: Successful SSH login - User: root
