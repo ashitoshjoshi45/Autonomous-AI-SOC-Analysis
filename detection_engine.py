@@ -53,16 +53,22 @@ class DetectionEngine:
         #added on 20-07-2026
         # title: analyze payload pseudocode
 class DetectionEngine:
-          def analyze_payload(payload_list, signature_db):
+          def analyze_payload(self, payload_list, signature_db):
             #added on 21-07-2026
-              # initialize an empty list to store detected threats
-              payload_list = []
-              # iterate through payload_list
-                  # iterate through signature_db
-                      # if signature is found in the payload
-                          # log the detection and defang any malicious URLs
-                          # flag payload for Ollama context analysis
-                          # break to avoid duplicate alerts for the same payload
-              #return the list of detected threats
-  
+            # initialize an empty list to store detected threats
+            detected_threats = []
+            # iterate through payload_list
+            for payload in payload_list:
+                # iterate through signature_db
+                for signature in signature_db:
+                    # if signature is found in the payload
+                    if signature in payload:
+                        # log the detection and defang any malicious URLs
+                        # optimized on 24-07-2026
+                        # flag payload for Ollama context analysis
+                        detected_threats.append(payload)
+                        # break to avoid duplicate alerts for the same payload
+                        break
+            #return the list of detected threats
+            return detected_threats
    
