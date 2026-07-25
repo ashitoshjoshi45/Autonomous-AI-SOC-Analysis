@@ -18,8 +18,8 @@ class DetectionEngine:
 
         #added on 16-07-2026
         def evaluate_traffic(self, log_entry, threat_signatures):
-        alert_flag = False
-        log_severity = "INFO"
+            alert_flag = False
+            log_severity = "INFO"
     
         for rule_name, rule_meta in threat_signatures.items():
             if rule_meta["pattern"].search(log_entry.get("payload", "")):
@@ -53,7 +53,7 @@ class DetectionEngine:
         #added on 20-07-2026
         # title: analyze payload pseudocode
 class DetectionEngine:
-          def analyze_payload(self, payload_list, signature_db):
+        def analyze_payload(self, payload_list, signature_db):
             #added on 21-07-2026
             # initialize an empty list to store detected threats
             detected_threats = []
@@ -72,3 +72,23 @@ class DetectionEngine:
             #return the list of detected threats
             return detected_threats
    
+           # added on 25-07-2026
+        def integrate_ollama_analysis(self, detected_threats):
+            # initialize an empty list to store contextually enriched alerts
+            enriched_alerts = []
+        
+            # iterate through the list of detected threats
+            for threat in detected_threats:
+                # generate the analysis prompt for the local LLM
+                llm_prompt = f"Analyze the following suspicious payload for malicious intent and flag potential CVEs: {threat}"
+            
+                # append the structured alert with pending AI context
+                enriched_alerts.append({
+                    "timestamp": datetime.utcnow().isoformat() + "Z",
+                    "payload": threat,
+                    "ollama_prompt": llm_prompt,
+                    "status": "Awaiting LLM response"
+                })
+            
+            # return the enriched contextual alerts
+            return enriched_alerts
