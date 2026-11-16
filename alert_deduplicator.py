@@ -4,7 +4,7 @@
 class Solution:
 #   def deduplicate_alerts(incoming_alerts, recent_cache):
     def deduplicate_alerts(self, incoming_alerts, recent_cache, time_threshold): 
-#         // Initialize an empty list for unique_alerts
+#         // Initialize an empty list for unique_alerts. 
         unique_alerts = []
 #         // OUTER LOOP: For each alert in incoming_alerts
         for alert in incoming_alerts:

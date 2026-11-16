@@ -1,6 +1,6 @@
 # 🛡️ Autonomous AI SOC Analyst
 
-A real-time security monitoring system built in Python. This project simulates a Security Operations Center (SOC) workflow by generating live server logs and analyzing them instantly for brute-force attacks.
+A real-time security monitoring system built in Python. This project simulates a Security Operations Center (SOC) workflow by generating live server logs and analyzing them instantly for brute-force attacks..
 
 ## ⚙️ How It Works
 
